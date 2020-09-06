@@ -1,0 +1,28 @@
+{% extends 'trends/base.html' %}
+{% load static %}
+
+{% block active_index %}active{% endblock %}
+
+{% block body %}
+<div class="parallax-container">
+	<div class="parallax">
+		<img src="{% static 'trends/images/social-media.png' %}" >
+	</div>
+	<h1 class="josefin center-align " data-aos="fadeInUp">Welcome <br> to Twitter Senitements</h1>
+</div>
+<br><br><br>
+<div class="center">
+	<h1 class="josefin" data-aos="zoom-in-up">India Today</h1><br><br>
+	<img src="{{india}}" data-aos="zoom-in-up" data class="responsive-img"><br><br><br><br>
+</div>
+<div class="center">
+	<h1 class="josefin" data-aos="zoom-in-up">Trending Topics</h1><br><br>
+	<img src="{{bargraph}}" data-aos="zoom-in-up" class="responsive-img"><br><br><br><br>
+</div>
+<div class="center">
+	<h1 class="josefin" data-aos="zoom-in-up">Top Hashtags</h1><br><br>
+	<img src="{{piechart}}" data-aos="zoom-in-up" class="responsive-img"><br><br><br><br>
+</div>
+
+
+{% endblock %}

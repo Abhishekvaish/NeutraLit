@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<!--Import Google Icons-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--Import materialize.css-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+<!-- Import Animation on scroll -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<!-- Import Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&amp;display=swap" rel="stylesheet">
+
+<!-- Import Custom CSS -->
+<link rel="stylesheet" type="text/css" href="{% static 'trends/css/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'trends/css/animate.css' %}">
+<!-- Import Logo -->
+<link rel="icon" href="{% static 'trends/images/logo.jpeg' %}">
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>twitter Sentiment</title>
+</head>
+<body>
+<header>
+    <nav class="dark-primary-color">
+        <div class="navbar-wrapper">
+            <a href="/" class="brand-logo"><img src="{% static 'trends/images/logo.jpeg' %}" class="responsive-img" width="70px" ></a>
+            <a href="" class="button-collapse " data-activates="sidenavbar" ><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li class="{% block active_index %}{% endblock %}">
+                        <a href="{% url 'trends:index' %}">Home</a></li>
+                    <li class="{% block active_topics %}{% endblock %}">
+                        <a href="{% url 'trends:topics' %}">Topics</a></li>
+                    <li class="{% block active_about %}{% endblock %}">
+                        <a href="{% url 'trends:about' %}">About</a></li>
+                </ul>
+                <ul id="sidenavbar" class="side-nav">
+                    <li><a href="{% url 'trends:index' %}">Home</a></li>
+                    <li><a href="{% url 'trends:topics' %}">Topics</a></li>
+                    <li><a href="{% url 'trends:about' %}">About</a></li>
+                </ul>
+        </div>
+    </nav>
+</header>
+<main>
+    {% block body %}
+    {% endblock %}
+</main>
+<footer class="primary-color white-text">
+    <div class="row">
+        <div class="col l3 m6 s12">
+            <br>
+            <img src="{% static 'trends/images/logo.jpeg' %}" class="responsive-img" style="border-radius: 25px;">
+<!--             <h3 class="josefin center-align">Neutralit</h3>
+            <p class="center-align">Majority News, No Bias</p> -->
+        </div>
+        <div class="col l3 m6 s12">
+            <br>
+            <h4 class="josefin">Neutralit</h4>
+            <p>Computationally identifying and categorizing opinions expressed in a piece of text, especially in order to determine whether the writer's attitude towards a particular topic, product, etc. is positive, negative, or neutral.</p>
+        </div>
+        <div class="col l3 m6 s12"><br>
+            <h4 class="josefin">Contact</h4>
+                
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright dark-primary-color">
+        <br>
+        <div class="container white-text center josefin">
+            Copyright 2020 &copy; all right reserved
+        </div>
+        <br>
+    </div>
+</footer>
+
+<!-- Import Vue and axios -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+<script type="text/javascript" src="{% static 'trends/js/main.js' %}"></script>
+
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<!-- Animation On Scroll -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!-- Custom JS Design -->
+<script type="text/javascript" src="{% static 'trends/js/jquery.js'  %}"></script>
+</body>
+</html>
