@@ -156,10 +156,10 @@ stopwords=set(STOPWORDS)
 stopwords.add('amp')
 stopwords.add('will')
 
-india = getIndia()
-piechrat = getPieChart()
-bargraph = getBar()
-topics = get_topics()
+# india = getIndia()
+# piechrat = getPieChart()
+# bargraph = getBar()
+# topics = get_topics()
 
 
 #Topic_pop up details

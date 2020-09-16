@@ -4,25 +4,36 @@
 {% block active_index %}active{% endblock %}
 
 {% block body %}
+<div id="home">
+
 <div class="parallax-container">
 	<div class="parallax">
 		<img src="{% static 'trends/images/social-media.png' %}" >
 	</div>
-	<h1 class="josefin center-align " data-aos="fadeInUp">Welcome <br> to Twitter Senitements</h1>
+	<h1 class="josefin center-align" >Welcome <br> to NeutraLit</h1>
 </div>
+
 <br><br><br>
-<div class="center">
-	<h1 class="josefin" data-aos="zoom-in-up">India Today</h1><br><br>
-	<img src="{{india}}" data-aos="zoom-in-up" data class="responsive-img"><br><br><br><br>
+<div class="center" v-if="india">
+	<h1 class="josefin osa" >India Today</h1><br><br>
+	<img :src="[[india]]" class="responsive-img osa"><br><br><br><br>
+	<h1 class="josefin osa" >Trending Topics</h1><br><br>
+	<img :src="[[bargraph]]"  class="responsive-img osa"><br><br><br><br>
+	<h1 class="josefin osa" >Top Hashtags</h1><br><br>
+	<img :src="[[piechart]]"  class="responsive-img osa"><br><br><br><br>
 </div>
-<div class="center">
-	<h1 class="josefin" data-aos="zoom-in-up">Trending Topics</h1><br><br>
-	<img src="{{bargraph}}" data-aos="zoom-in-up" class="responsive-img"><br><br><br><br>
+<div v-else class="center" style="height: 80vh;margin-top: 30vh;">
+	<div class="preloader-wrapper big active">
+	    <div class="spinner-layer spinner-blue-only">
+	      <div class="circle-clipper left">
+	        <div class="circle"></div>
+	      </div><div class="gap-patch">
+	        <div class="circle"></div>
+	      </div><div class="circle-clipper right">
+	        <div class="circle"></div>
+	      </div>
+	    </div>
+		 </div>
+	</div>
 </div>
-<div class="center">
-	<h1 class="josefin" data-aos="zoom-in-up">Top Hashtags</h1><br><br>
-	<img src="{{piechart}}" data-aos="zoom-in-up" class="responsive-img"><br><br><br><br>
-</div>
-
-
 {% endblock %}

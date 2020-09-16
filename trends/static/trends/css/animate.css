@@ -1,5 +1,5 @@
-@keyframes  {
-  from {fadeInUp
+@keyframes fadeInUp {
+  from {
     opacity: 0;
     transform: translate3d(0, 100%, 0);
   }
@@ -9,12 +9,15 @@
     transform: translate3d(0, 0, 0);
   }
 }
-[data-aos="fadeInUp"].aos-animate {
-  animation-name: fadeInUp;
-  animation-duration: 1s;
-}
-.fadeInUp{
-  animation-name: fadeInUp;
-  animation-duration: 1s;
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
 

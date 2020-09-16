@@ -8,34 +8,35 @@
 	<br>
 	<h2 class="josefin center-align" data-aos="fadeInUp">Topics</h2>
 	<br>
-	<!-- data-aos="zoom-in-up" data-aos-delay="10" data-aos-duration="1000" -->
-		<div v-if="topics.length === 0" style="margin-top: 20%; height: 1000px;" class="center">	
-			 <div class="preloader-wrapper big active">
-			    <div class="spinner-layer spinner-blue-only">
-			      <div class="circle-clipper left">
-			        <div class="circle"></div>
-			      </div><div class="gap-patch">
-			        <div class="circle"></div>
-			      </div><div class="circle-clipper right">
-			        <div class="circle"></div>
-			      </div>
-			    </div>
- 			 </div>
-		</div>
-		<div v-else>
-			<div class="col l3 m6 s12" v-for="topic in topics" >
-				<div class="card hoverable z-depth-2">
-					<div class="card-content">
-						<h3 class="josefin">[[topic]]<span class="teal white-text badge">75+ tweets</span></h3>
-						Consequat aute id magna sunt consectetur deserunt ut cillum elit veniam nostrud ut cupidatat irure ut ut.
-					</div>
-					<div class="card-action">
-						<a href="">View Analysis <i class="material-icons right ">send</i> </a>
-					</div>
+	<div class="col l8 offset-l1">
+		{% for topic in topics %}
+		<ul class="collapsible popout">
+			<li class="">
+				<div class="collapsible-header">
+					<h4 class="josefin">{{topic.0}}</h4>
+					<span class="teal white-text badge">{{topic.1}}+ tweets</span>
 				</div>
+				<div class="collapsible-body">
+					<h5>Random Tweet</h5>
+					<p>{{topic.2}}</p>
+					<a href="" class="btn blue">View Analysis</a>
+				</div>
+			</li>
+		</ul>
+		{% endfor %}
+	</div>
+<!-- 	{% for topic in topics %}
+	<div class="col l3 m6 s12">
+		<div class="card hoverable z-depth-2 osa">
+			<div class="card-content">
+				<h3 class="josefin">{{topic.0}}<span class="teal white-text badge">{{topic.1}}tweets</span></h3>
+				{{topic.2}}
+			</div>
+			<div class="card-action">
+				<a href="">View Analysis <i class="material-icons right ">send</i> </a>
 			</div>
 		</div>
-		
-		
+	</div>
+	{% endfor %} -->
 </div>
 {% endblock %}

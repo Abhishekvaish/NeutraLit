@@ -12,17 +12,20 @@ function sendRequest(url,method,data){
 	return r;
 }
 
-var topicsApp = new Vue({
+var indexApp = new Vue({
 	delimiters: ['[[', ']]'],
-	el : '#topics',
+	el : '#home',
 	data : {
-		topics : [],
+		india : '',
+		piechart : '',
+		bargraph : '',
 	},
 	created(){
 		sendRequest('','get',null)
-		.then(res => {
-			 this.topics  = res.data.topics;
+		.then(res=>{
+			this.india = 'data:image/png;base64,'+res.data.india;
+			this.piechart ='data:image/png;base64,'+res.data.piechart;
+			this.bargraph ='data:image/png;base64,'+res.data.bargraph;
 		});
 	},
-	
-});
+})

@@ -31,17 +31,43 @@ nav .brand-logo img{
 nav li.active a{
 	
 }
-.parallax-container img {
-	opacity: 0.8;
+
+/* -----------------HOME PAGE STYLES -----------------*/
+
+#home.parallax-container img {
+	filter: blur(5px);
 }
-.parallax-container h1{
+#home .parallax-container h1{
+	opacity: 1;
 	margin-top: 10%;
 	font-weight: bold;
+	animation-name: fadeInUp;
+	animation-duration: 2s;
 }
+#home h1 {
+	opacity: 0;
+}
+#home h1.visible{
+	opacity: 1;
+	animation-name:  zoomIn;
+	animation-duration: 1s;
+}
+#home img.visible{
+	animation-name:  zoomIn;
+	animation-duration: 2s;
+}
+
+
+/* -----------------TOPICS PAGE STYLES -----------------*/
 
 #topics .card {
 	margin-bottom: 50px;
 	transition: 0.3s ease transform;
+}
+#topics .card .visible{
+	animation-name: zoomIn;
+	animation-duration: 1s;
+
 }
 #topics .card:hover {
 	transform: translateY(-15px);
