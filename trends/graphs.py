@@ -137,16 +137,21 @@ def topic_graph(topic):
     plt.legend(labels=sentdf.index, loc='upper left')
     context['fig3'] = graphic(fig)
     ###################DAYBARGRAPGH########################
-    # listhour=[int(i[3:5]) for i in dfc['time'].tolist()]
-    # listhour=sorted(listhour)
-    # binsh=np.arange(listhour[0],listhour[len(listhour)-1],1)
+    #dataset['created_at']=pd.to_datetime(dataset['created_at'])
+    dfc['time']=pd.to_datetime(dfc['created_at'])
+    dfc['time']=dfc['time'].dt.hour
+    #dfc['time']=dataset['created_at'].dt.hour
+    #listhour=[int(i[3:5]) for i in dfc['time'].tolist()]
+    listhour=dfc['time']
+    listhour=sorted(listhour)
+    binsh=np.arange(listhour[0],listhour[len(listhour)-1],1)
 
-    # fignewhour=plt.figure()
-    # plt.hist(listhour, bins=binsh, alpha=0.5)
-    # plt.title('hour graph for'+topic)
-    # plt.xlabel('hour')
-    # plt.ylabel('No of tweets')
-    # context['fig4'] = graphic(fignewhour)
+    fignewhour=plt.figure()
+    plt.hist(listhour, bins=binsh, alpha=0.5)
+    plt.title('hour graph for'+topic)
+    plt.xlabel('hour')
+    plt.ylabel('No of tweets')
+    context['fig4'] = graphic(fignewhour)
     return context
 
 
