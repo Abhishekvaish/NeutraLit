@@ -1,0 +1,35 @@
+{% extends 'trends/base.html' %}
+{% load static %}
+{% block body %}
+<div id='detail'>
+<div class="parallax-container">
+	<div class="parallax">
+		<img :src="[[fig1]]">
+	</div>
+	<h1 class="josefin center-align white-text ">{{topic}}</h1>
+</div>
+<div class="center" v-if="fig1">
+	<br><br><br><br>
+	<h1 class="josefin osa" >BarGraph</h1><br><br>
+	<img :src="[[fig2]]"  class="responsive-img osa"><br><br><br><br>
+	<h1 class="josefin osa" >PieChart</h1><br><br>
+	<img :src="[[fig3]]"  class="responsive-img osa"><br><br><br><br>
+	<h1 class="josefin osa" >Time</h1><br><br>
+	<img :src="[[fig4]]"  class="responsive-img osa"><br><br><br><br>
+</div>
+<div v-else class="center" style="height: 80vh;">
+	<div class="preloader-wrapper big active">
+	    <div class="spinner-layer spinner-blue-only">
+	      <div class="circle-clipper left">
+	        <div class="circle"></div>
+	      </div><div class="gap-patch">
+	        <div class="circle"></div>
+	      </div><div class="circle-clipper right">
+	        <div class="circle"></div>
+	      </div>
+	    </div>
+		 </div>
+	</div>
+</div>
+</div>
+{% endblock %}
