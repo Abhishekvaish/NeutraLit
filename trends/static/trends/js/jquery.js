@@ -2,6 +2,8 @@ $('document').ready(function(){
     // jquery goes here
     $('.button-collapse').sideNav();
     $('.parallax').parallax();
+    $('.tap-target').tapTarget('open');
+    // $('.tap-target').tapTarget('close');
 
 
 });

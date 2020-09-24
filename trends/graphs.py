@@ -65,7 +65,7 @@ def getPieChart():
     colors_list = ['gold', 'yellowgreen', 'lightcoral', 'lightskyblue', 'lightgreen','pink']
     explode_list = [0.1, 0.1, 0.1, 0, 0,0]
     piedf['count'].plot(kind='pie',
-                            figsize=(10,6),
+                            figsize=(10,5),
                             autopct='%1.1f%%',
                             startangle=90,
                             shadow=True,
@@ -159,13 +159,9 @@ dataset = pd.read_csv('tweets.csv')#get_dataset()
 tweetstxt = getweetstxt()
 stopwords=set(STOPWORDS)
 stopwords.add('amp')
+stopwords.add('https')
+stopwords.add('http')
 stopwords.add('will')
-
-# india = getIndia()
-# piechrat = getPieChart()
-# bargraph = getBar()
-# topics = get_topics()
-
 
 #Topic_pop up details
 def topic_board():

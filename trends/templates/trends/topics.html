@@ -8,12 +8,12 @@
 	<br>
 	<h2 class="josefin center-align" data-aos="fadeInUp">Topics</h2>
 	<br>
-	<div class="col l8 offset-l1">
+	<div class="col l8 offset-l2">
 		{% for topic in topics %}
 		<ul class="collapsible popout">
 			<li class="">
 				<div class="collapsible-header">
-					<h4 class="josefin">{{topic.0}}</h4>
+					<h4 class="josefin flow-text">{{topic.0}}</h4>
 					<span class="teal white-text badge">{{topic.1}}+ tweets</span>
 				</div>
 				<div class="collapsible-body">
@@ -25,20 +25,7 @@
 		</ul>
 		{% endfor %}
 	</div>
-<!-- 	{% for topic in topics %}
-	<div class="col l3 m6 s12">
-		<div class="card hoverable z-depth-2 osa">
-			<div class="card-content">
-				<h3 class="josefin">{{topic.0}}<span class="teal white-text badge">{{topic.1}}tweets</span></h3>
-				{{topic.2}}
-			</div>
-			<div class="card-action">
-				<a href="">View Analysis <i class="material-icons right ">send</i> </a>
-			</div>
-		</div>
-	</div>
-	{% endfor %} -->
-	<ul class="pagination col l10 offset-l1">
+	<ul class="pagination col l10 offset-l3">
 		{% if topics.has_previous %}
 		<li class="blue lighten-3 waves-effect">
 			<a href="?page=1">first</a>

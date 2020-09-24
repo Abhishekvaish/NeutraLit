@@ -17,8 +17,10 @@
 <div class="center" v-if="india">
 	<h1 class="josefin osa" >India Today</h1><br><br>
 	<img :src="[[india]]" class="responsive-img osa"><br><br><br><br>
+	<hr size="5" color="blue">	
 	<h1 class="josefin osa" >Trending Topics</h1><br><br>
 	<img :src="[[bargraph]]"  class="responsive-img osa"><br><br><br><br>
+	<hr size="5" color="blue">	
 	<h1 class="josefin osa" >Top Hashtags</h1><br><br>
 	<img :src="[[piechart]]"  class="responsive-img osa"><br><br><br><br>
 </div>
@@ -34,6 +36,21 @@
 	      </div>
 	    </div>
 		 </div>
+		 <h4>Loading....</h4>
+	</div>
+</div>
+
+<div class="fixed-action-btn">
+	<a href="{% url 'trends:topics' %}" id="menu" class="btn-floating btn-large blue pulse">
+	<i class="large material-icons">apps</i>
+	</a>
+</div>
+
+<!-- Tap Target Structure -->
+<div class="tap-target blue" data-activates="menu">
+	<div class="tap-target-content">
+		<h5 class="white-text">Topics</h5>
+		<p class="white-text">To view topicwise analysis click here</p>
 	</div>
 </div>
 {% endblock %}
