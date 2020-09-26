@@ -27,31 +27,30 @@
 	</div>
 	<ul class="pagination col l10 offset-l3">
 		{% if topics.has_previous %}
-		<li class="blue lighten-3 waves-effect">
+		<li class="waves-effect">
 			<a href="?page=1">first</a>
 		</li>
-		<li class="blue lighten-3 waves-effect">
+		<li class="waves-effect">
 			<a href="?page={{topics.previous_page_number}}">prev</a>
 		</li>
 		{% endif %}
 		{% for num in topics.paginator.page_range %}
 			{% if topics.number == num %}
-				<li class="blue lighten-3 waves-effect active">
-					<a href="?page={{num}}">{{num}}</a>
+				<li class="blue waves-effect active">
+					<a href="?page={{num}}" class="white-text">{{num}}</a>
 				</li>
 			{% else %}
-				<li class="blue lighten-3 waves-effect">
+				<li class="waves-effect">
 					<a href="?page={{num}}">{{num}}</a>
 				</li>
 			{% endif %}
-			<li></li>
 		{% endfor %}
 		
 		{% if topics.has_next %}
-		<li class="blue lighten-3 waves-effect">
+		<li class="waves-effect">
 			<a href="?page={{topics.next_page_number}}">next</a>
 		</li>
-		<li class="blue lighten-3 waves-effect">
+		<li class="waves-effect">
 			<a href="?page={{topics.paginator.num_pages}}">last</a>
 		</li>
 		{% endif %}
