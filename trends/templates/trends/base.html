@@ -33,9 +33,18 @@
                         <a href="{% url 'trends:about' %}">About</a></li>
                 </ul>
                 <ul id="sidenavbar" class="side-nav">
-                    <li><a href="{% url 'trends:index' %}">Home</a></li>
-                    <li><a href="{% url 'trends:topics' %}">Topics</a></li>
-                    <li><a href="{% url 'trends:about' %}">About</a></li>
+                    <li>
+                        <div class="user-view">
+                            <div class="background dark-primary-color">
+                            </div>
+                            <i class="material-icons circle white blue-text">&nbsp;&nbsp;N.L. </i>
+                            <span class="name"><h4  class="josefin">NeutraLit</h4></span>
+
+                        </div>
+                    </li>
+                    <li><a href="{% url 'trends:index' %}"><i class="material-icons">home</i> Home</a></li>
+                    <li><a href="{% url 'trends:topics' %}"><i class="material-icons">apps</i> Topics</a></li>
+                    <li><a href="{% url 'trends:about' %}"><i class="material-icons">exit_to_app</i> About</a></li>
                 </ul>
         </div>
     </nav>

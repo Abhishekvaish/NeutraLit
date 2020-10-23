@@ -6,22 +6,33 @@ from wordcloud import WordCloud,STOPWORDS
 from io import BytesIO
 import base64
 from textblob import TextBlob
+stopwords=set(STOPWORDS)
+stopwords.add('amp')
+stopwords.add('https')
+stopwords.add('http')
+stopwords.add('will')
 
-
+dataset = None 
+tweetstxt =None 
+# get_dataset()
+# getweetstxt()
 #########prerequisite############
 def get_dataset():
+    global dataset
     from urllib import request
-    link_csv = 'link'
+    link_csv ='https://drive.google.com/uc?id=19ewIwAUcEJ0aABmXDOknccmeO40W03Rw&export=download'
     response = request.urlopen(link_csv)
     content = response.read().decode('utf8')
     with open('tweets.csv','w',encoding='utf-8',newline='') as f:
         f.write(content)
-    return pd.read_csv('tweets.csv')
+    dataset =  pd.read_csv('tweets.csv')
 def getweetstxt():
+    global tweetstxt
     with open('tweets.txt','w',encoding='utf-8') as f:
         for i in range(dataset.shape[0]):
             f.write(dataset['topic'][i]+dataset['full_text'][i]+'\n')
-    return open('tweets.txt','r',encoding="ascii",errors='ignore').read()
+    tweetstxt =  open('tweets.txt','r',encoding="ascii",errors='ignore').read()
+
 def graphic(figure):
     buffer = BytesIO()
     plt.savefig(buffer, format='png',bbox_inches = 'tight',pad_inches = 0)
@@ -41,7 +52,17 @@ def get_topics():
         context[i] = dataset[dataset['topic']==i].count()[0]
 
     return sorted(context.items() ,key=lambda x:x[1])[::-1]
-
+#Topic_pop up details
+def topic_board():
+    topic_pop_up=[]
+    for topic,tweets in zip(dataset['topic'].value_counts().index,dataset['topic'].value_counts().values):
+        list_temp=[]
+        list_temp.append(topic)
+        list_temp.append(tweets)
+        random_tweet=dataset.query(f"topic == '{topic}'")[['full_text']].sample(n=1).iat[0,0]
+        list_temp.append(random_tweet)
+        topic_pop_up.append(list_temp)
+    return topic_pop_up
 ########Home################
 def getIndia():
 
@@ -155,22 +176,3 @@ def topic_graph(topic):
     return context
 
 
-dataset = pd.read_csv('tweets.csv')#get_dataset()
-tweetstxt = getweetstxt()
-stopwords=set(STOPWORDS)
-stopwords.add('amp')
-stopwords.add('https')
-stopwords.add('http')
-stopwords.add('will')
-
-#Topic_pop up details
-def topic_board():
-    topic_pop_up=[]
-    for topic,tweets in zip(dataset['topic'].value_counts().index,dataset['topic'].value_counts().values):
-        list_temp=[]
-        list_temp.append(topic)
-        list_temp.append(tweets)
-        random_tweet=dataset.query(f"topic == '{topic}'")[['full_text']].sample(n=1).iat[0,0]
-        list_temp.append(random_tweet)
-        topic_pop_up.append(list_temp)
-    return topic_pop_up

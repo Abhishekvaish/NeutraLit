@@ -7,6 +7,8 @@ from . import graphs
 TOPICS = []
 def index(request):
 	if request.is_ajax():
+		graphs.get_dataset();
+		graphs.getweetstxt();
 		context = {
 		"india" : graphs.getIndia(),
 		"piechart" : graphs.getPieChart(),

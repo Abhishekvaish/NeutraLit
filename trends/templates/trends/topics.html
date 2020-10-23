@@ -25,7 +25,8 @@
 		</ul>
 		{% endfor %}
 	</div>
-	<ul class="pagination col l10 offset-l3">
+	<div class="container">
+		<ul class="pagination col l10 offset-l3">
 		{% if topics.has_previous %}
 		<li class="waves-effect">
 			<a href="?page=1">first</a>
@@ -55,5 +56,6 @@
 		</li>
 		{% endif %}
 	</ul>
+	</div>
 </div>
 {% endblock %}
