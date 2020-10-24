@@ -90,4 +90,11 @@ nav li.active a{
 	animation-duration: 2s;
 }
 /*--------------------ABOUT STYLES----------------  */
-
+#tools .card-panel.visible{
+	animation-name: jackInTheBox;
+	animation-duration: 2s;
+}
+#creators  .card-panel.visible{
+	animation-name: zoomIn;
+	animation-duration: 1s;
+}
