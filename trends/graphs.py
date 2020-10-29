@@ -20,7 +20,7 @@ tweetstxt =None
 def get_dataset():
     global dataset
     from urllib import request
-    link_csv ='https://drive.google.com/uc?id=19ewIwAUcEJ0aABmXDOknccmeO40W03Rw&export=download'
+    link_csv ='link'
     response = request.urlopen(link_csv)
     content = response.read().decode('utf8')
     with open('tweets.csv','w',encoding='utf-8',newline='') as f:
